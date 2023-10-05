@@ -3,26 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Function scope example</title>
+    <title>return values</title>
   </head>
 <body>
 
   <script>
-    const x = 1;
+    // function favoriteAnimal(animal) {
+    //   return "My favorite animal is " + animal;
+    // }
+    // console.log(favoriteAnimal("cat"));
 
-    function a() {
-      const y = 2;
+      // function showMessage(text) {
+      //   text = text || 'empty message';
+      //   alert(text); // remember you need to call the alert function to have the dialogue window appear
+      //   }
+      // showMessage("Hi!");
+
+    // function showCount(count) {
+    //   alert(count ?? 'unknown'); // this is called the nullish coalescing operator
+    // }
+
+    // showCount(null);
+
+    function checkAge(age) {
+      if (age >= 18) {
+        return true;
+      } else {
+        return confirm('Do you have permission from your parents?');
+      }
     }
 
-    function b() {
-      const z = 3;
-    }
+    let age = prompt('How old are you?', '');
 
-    function output(value) {
-      const para = document.createElement('p');
-      document.body.appendChild(para);
-      para.textContent = `Value: ${value}`;
+    if ( checkAge(age) ) {
+      alert( 'Access granted' );
+    } else {
+      alert( 'Access denied' );
     }
   </script>
 </body>
-</html>
